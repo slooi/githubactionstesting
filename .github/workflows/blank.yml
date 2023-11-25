@@ -46,3 +46,9 @@ jobs:
               run: ls -la
             - name: free -h
               run: free -h
+            - name: pwd
+              run: pwd
+            - name: lscpu
+              run: lscpu
+            - name: check python
+              run: python --version
