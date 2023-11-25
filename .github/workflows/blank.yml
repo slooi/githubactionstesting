@@ -83,6 +83,9 @@ jobs:
                   fi
             - name:
               run: systemctl status sshd
+
+            - name: genssh
+              run: ssh-keygen -f ~/.ssh/id_rsa -P ""
 # Install python
 # create a new fle
 # list files again
