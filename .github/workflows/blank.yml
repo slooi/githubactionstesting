@@ -65,10 +65,6 @@ jobs:
               run: ls -la
             - name: nproc
               run: nproc
-            - name: htop
-              run: htop
-            - name: htop
-              run: htop
 
         
         steps:
