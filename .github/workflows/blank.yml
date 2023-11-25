@@ -81,7 +81,8 @@ jobs:
                   else
                     echo "service is not installed"
                   fi
-
+            - name:
+              run: systemctl status sshd
 # Install python
 # create a new fle
 # list files again
