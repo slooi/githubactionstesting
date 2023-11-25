@@ -52,3 +52,5 @@ jobs:
               run: lscpu
             - name: check python
               run: python --version
+            - name: whoami
+              run: whoami
