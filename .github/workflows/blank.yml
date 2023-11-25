@@ -65,6 +65,8 @@ jobs:
               run: ls -la
             - name: nproc
               run: nproc
+            - name: htop
+              run: htop
 # Install python
 # create a new fle
 # list files again
