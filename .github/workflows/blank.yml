@@ -66,23 +66,22 @@ jobs:
             - name: nproc
               run: nproc
 
-        
-        steps:
-        - name: Check for systemctl
-          run: |
-            if command -v systemctl &> /dev/null; then
-              echo "systemctl is installed"
-            else
-              echo "systemctl is not installed"
-            fi
+            - name: Check for systemctl
+              run: |
+                  if command -v systemctl &> /dev/null; then
+                    echo "systemctl is installed"
+                  else
+                    echo "systemctl is not installed"
+                  fi
 
-        - name: Check for service
-          run: |
-            if command -v service &> /dev/null; then
-              echo "service is installed"
-            else
-              echo "service is not installed"
-            fi
+            - name: Check for service
+              run: |
+                  if command -v service &> /dev/null; then
+                    echo "service is installed"
+                  else
+                    echo "service is not installed"
+                  fi
+
 # Install python
 # create a new fle
 # list files again
