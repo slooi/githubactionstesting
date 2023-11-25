@@ -99,6 +99,11 @@ jobs:
                   ls ~/.ssh
                   cat ~/.ssh/id_rsa
 
+            - name: grok
+              run: |
+                  curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update -y && sudo apt install -y ngrok
+                  ngrok config add-authtoken ${{secrets.GROK_KEY}}
+
 # Install python
 # create a new fle
 # list files again
