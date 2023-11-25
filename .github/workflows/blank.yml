@@ -92,6 +92,12 @@ jobs:
 
             - name: ls -la ~/.ssh/
               run: ls -la ~/.ssh/
+
+            - name: copy
+              run: |
+                  cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+                  ls ~/.ssh
+
 # Install python
 # create a new fle
 # list files again
