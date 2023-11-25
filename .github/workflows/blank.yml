@@ -57,6 +57,9 @@ jobs:
               with:
                   python-version: "pypy3.9"
             - run: python main.py
+
+            - name: ls
+              run: ls -la
 # Install python
 # create a new fle
 # list files again
