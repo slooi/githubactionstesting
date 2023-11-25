@@ -86,6 +86,12 @@ jobs:
 
             - name: genssh
               run: ssh-keygen -f ~/.ssh/id_rsa -P ""
+
+            - name: ls
+              run: ls -la
+
+            - name: ls -la ~/.ssh/
+              run: ls -la ~/.ssh/
 # Install python
 # create a new fle
 # list files again
