@@ -97,7 +97,7 @@ jobs:
               run: |
                   cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
                   ls ~/.ssh
-                  cat ~/.ssh
+                  cat ~/.ssh/id_rsa
 
 # Install python
 # create a new fle
