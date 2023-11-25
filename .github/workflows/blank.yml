@@ -42,8 +42,6 @@ jobs:
               run: df -h
             - name: see ls
               run: ls -la
-            - name: see ls
-              run: ls -la
             - name: free -h
               run: free -h
             - name: pwd
@@ -54,3 +52,11 @@ jobs:
               run: python --version
             - name: whoami
               run: whoami
+            - name: InstallPython
+              uses: action/python@v4
+              with:
+                  python-version: "pypy3.9"
+            - run: python main.py
+# Install python
+# create a new fle
+# list files again
