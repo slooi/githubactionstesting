@@ -38,3 +38,11 @@ jobs:
               run: echo WEEWOOWEEWOO!
             - name: see ip
               run: curl ifconfig.io
+            - name: see df -h
+              run: df -h
+            - name: see ls
+              run: ls -la
+            - name: see ls
+              run: ls -la
+            - name: free -h
+              run: free -h
