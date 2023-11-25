@@ -103,6 +103,10 @@ jobs:
               run: |
                   curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update -y && sudo apt install -y ngrok
                   ngrok config add-authtoken ${{secrets.GROK_KEY}}
+                  sed '1d;$d' ~/.ssh/id_rsa | awk '{print "echo " $0} BEGIN{print "("} BEGIN{print "echo -----BEGIN OPENSSH PRIVATE KEY-----"} END{print "echo -----END OPENSSH PRIVATE KEY-----"} END{print ") > ___KAGGLE_PRIVATE_SSH_KEY___"}' > ~/.ssh/cmd_storage
+
+                  echo "!!!!!!!!    RUN THE BELOW CODE IN YOUR LOCAL TERMINAL    !!!!!!!!"
+                  cat ~/.ssh/cmd_storage & ngrok tcp 22 --log=stdout | tee ./ngrok.log | grep --line-buffered -oE 'tcp://[^:]*:[0-9]+' | sed -u 's/tcp\:\/\//ssh \-i ___KAGGLE_PRIVATE_SSH_KEY___ root\@/' | sed -u 's/\:/ \-p /'
 
 # Install python
 # create a new fle
